@@ -13,9 +13,18 @@
         </span>
         <!-- 以下信息请不要修改哦 -->
         <span class="hidden">
-          &amp;&nbsp;Made&nbsp;by
+          &amp;&nbsp;
+          Project&nbsp;by
           <a :href="config.github" target="_blank">
+            {{ config.name }}
+          </a>
+          Made&nbsp;by
+          <a :href="config.author_home" target="_blank">
             {{ config.author }}
+          </a>
+          Changer&nbsp;by
+          <a :href="config.changer_home" target="_blank">
+            {{ config.changer }}
           </a>
         </span>
         <!-- 站点备案 -->

@@ -96,7 +96,7 @@ onMounted(() => {
   | | | |\\/| |\\___ \\  \\   /    \\   /
  _| |_| |  | |____) |  | |      | |
 |_____|_|  |_|_____/   |_|      |_|`;
-  const content = `\n\n版本: ${config.version}\n主页: ${config.home}\nGithub: ${config.github}`;
+  const content = `\n\n版本: ${config.version}\n原作者: ${config.author}\n原作者主页: ${config.author_home}\n魔改作者: ${config.changer}\n魔改作者主页: ${config.changer_home}\nGithub: ${config.github}`;
   console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
 });
 
