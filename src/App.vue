@@ -71,7 +71,7 @@ onMounted(() => {
 
   // 鼠标中键事件
   window.addEventListener("mousedown", (event) => {
-    if (event.button == 1) {
+    if (event.button === 1) {
       store.backgroundShow = !store.backgroundShow;
       ElMessage({
         message: `已${store.backgroundShow ? "开启" : "退出"}壁纸展示状态`,
