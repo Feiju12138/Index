@@ -1,11 +1,5 @@
 <template>
   <div v-if="siteLinks[0]" class="links">
-    <div class="line">
-      <Icon size="20">
-        <Link />
-      </Icon>
-      <span class="title">网站列表</span>
-    </div>
     <!-- 网站列表 -->
     <Swiper
       v-if="siteLinks[0]"
@@ -21,10 +15,10 @@
     >
       <SwiperSlide v-for="site in siteLinksList" :key="site">
         <el-row class="link-all" :gutter="20">
-          <el-col v-for="(item, index) in site" :span="8" :key="item">
+          <el-col v-for="(item, index) in site" :span="4" :key="item">
             <div
               class="item cards"
-              :style="index < 3 ? 'margin-bottom: 20px' : null"
+              :style="index < 24 ? 'margin-bottom: 20px' : null"
               @click="jumpLink(item)"
             >
               <Icon size="26">
@@ -43,19 +37,17 @@
 <script setup>
 import { Icon } from "@vicons/utils";
 // 可前往 https://www.xicons.org 自行挑选并在此处引入
-import { Link, Blog, CompactDisc, Cloud, Compass, Book, Fire, LaptopCode } from "@vicons/fa"; // 注意使用正确的类别
-import { mainStore } from "@/store";
+// import { Link, Blog, CompactDisc, Cloud, Compass, Book, Fire, LaptopCode } from "@vicons/fa"; // 注意使用正确的类别
+import { Blog } from "@vicons/fa"; // 注意使用正确的类别
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Mousewheel } from "swiper/modules";
 import siteLinks from "@/assets/siteLinks.json";
 
-const store = mainStore();
-
 // 计算网站链接
 const siteLinksList = computed(() => {
   const result = [];
-  for (let i = 0; i < siteLinks.length; i += 6) {
-    const subArr = siteLinks.slice(i, i + 6);
+  for (let i = 0; i < siteLinks.length; i += 24) {
+    const subArr = siteLinks.slice(i, i + 24);
     result.push(subArr);
   }
   return result;
@@ -64,21 +56,11 @@ const siteLinksList = computed(() => {
 // 网站链接图标
 const siteIcon = {
   Blog,
-  Cloud,
-  CompactDisc,
-  Compass,
-  Book,
-  Fire,
-  LaptopCode,
 };
 
 // 链接跳转
 const jumpLink = (data) => {
-  if (data.name === "音乐" && store.musicClick) {
-    if (typeof $openList === "function") $openList();
-  } else {
-    window.open(data.link, "_blank");
-  }
+  window.open(data.link, "_blank");
 };
 
 onMounted(() => {
@@ -132,7 +114,7 @@ onMounted(() => {
     }
   }
   .link-all {
-    height: 220px;
+    height: 100%;
     .item {
       height: 100px;
       width: 100%;

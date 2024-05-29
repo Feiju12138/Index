@@ -8,23 +8,9 @@
     <main id="main" v-if="store.imgLoadStatus">
       <div class="container" v-show="!store.backgroundShow">
         <section class="all" v-show="!store.setOpenState">
-          <MainLeft />
           <MainRight v-show="!store.boxOpenState" />
-          <Box v-show="store.boxOpenState" />
-        </section>
-        <section class="more" v-show="store.setOpenState" @click="store.setOpenState = false">
-          <MoreSet />
         </section>
       </div>
-      <!-- 移动端菜单按钮 -->
-      <Icon
-        class="menu"
-        size="24"
-        v-show="!store.backgroundShow"
-        @click="store.mobileOpenState = !store.mobileOpenState"
-      >
-        <component :is="store.mobileOpenState ? CloseSmall : HamburgerButton" />
-      </Icon>
       <!-- 页脚 -->
       <Transition name="fade" mode="out-in">
         <Footer v-show="!store.backgroundShow && !store.setOpenState" />
@@ -34,16 +20,11 @@
 </template>
 <script setup>
 import { helloInit, checkDays } from "@/utils/getTime.js";
-import { HamburgerButton, CloseSmall } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
-import { Icon } from "@vicons/utils";
 import Loading from "@/components/Loading.vue";
-import MainLeft from "@/views/Main/Left.vue";
 import MainRight from "@/views/Main/Right.vue";
 import Background from "@/components/Background.vue";
 import Footer from "@/components/Footer.vue";
-import Box from "@/views/Box/index.vue";
-import MoreSet from "@/views/MoreSet/index.vue";
 import cursorInit from "@/utils/cursor.js";
 import config from "@/../package.json";
 
