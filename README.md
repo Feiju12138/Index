@@ -6,6 +6,41 @@
 - 去除了 [imsyy/home](https://github.com/imsyy/home) 项目的 Launch Pad 以外的所有其他功能
 - 获取数据从之前的直接从前端代码中获取改为了发请求获取json，目前请求的路径指向为当前项目的`/siteLinks.json`文件，在`npm run build`编译之后，可以通过修改`siteLinks.json`文件来实现数据的重新渲染
 
+```json
+[
+  {
+    "icon": "Docker",
+    "name": "服务名",
+    "link": "http://127.0.0.1:3000/"
+  }
+]
+```
+
+- 添加了比较全面的内网服务的图标，可以在`siteLinks.json`中直接调用
+
+|图标|备注|
+|---|---|
+|Blog|博客|
+|CloudDownloadAlt|下载|
+|CloudUploadAlt|上传|
+|SyncAlt|同步|
+|Cloud|云盘|
+|Server|服务器|
+|PhotoVideo|相册|
+|Gamepad|游戏|
+|Home|主页|
+|Docker|容器|
+|Book|书籍|
+|Camera|照相机|
+|Film|影视|
+|Search|搜索|
+|PaintBrush|绘画|
+|GitAlt|Git|
+|Music|音乐|
+|File|文件|
+|NetworkWired|网络|
+|ClipboardList|待办事项|
+
 ### 待修复的问题
 
 - [ ] 通过鼠标滑轮横向滑动页面时，如果包含3页，从第1页滑向第2页后，会自动跳到第3页

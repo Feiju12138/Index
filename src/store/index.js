@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import $ from "jquery"
 
 export const mainStore = defineStore("main", {
   state: () => {

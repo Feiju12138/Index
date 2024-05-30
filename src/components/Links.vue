@@ -36,14 +36,58 @@
 
 <script setup>
 import {Icon} from "@vicons/utils";
-// 可前往 https://www.xicons.org 自行挑选并在此处引入
-// import { Link, Blog, CompactDisc, Cloud, Compass, Book, Fire, LaptopCode } from "@vicons/fa"; // 注意使用正确的类别
-import { Blog } from "@vicons/fa"; // 注意使用正确的类别
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Mousewheel } from "swiper/modules";
-import { mainStore } from "@/store";
 
+import { mainStore } from "@/store";
 const store = mainStore();
+
+// 网站链接图标
+// 可前往 https://www.xicons.org 自行挑选并在此处引入
+import {
+  Blog,
+  CloudDownloadAlt,
+  CloudUploadAlt,
+  SyncAlt,
+  Cloud,
+  Server,
+  PhotoVideo,
+  Gamepad,
+  Home,
+  Docker,
+  Book,
+  Camera,
+  Film,
+  Search,
+  PaintBrush,
+  GitAlt,
+  Music,
+  File,
+  NetworkWired,
+  ClipboardList
+} from "@vicons/fa"; // 注意使用正确的类别
+const siteIcon = {
+  Blog,
+  CloudDownloadAlt,
+  CloudUploadAlt,
+  SyncAlt,
+  Cloud,
+  Server,
+  PhotoVideo,
+  Gamepad,
+  Home,
+  Docker,
+  Book,
+  Camera,
+  Film,
+  Search,
+  PaintBrush,
+  GitAlt,
+  Music,
+  File,
+  NetworkWired,
+  ClipboardList,
+};
 
 // 计算网站链接
 const siteLinksList = computed(() => {
@@ -55,11 +99,6 @@ const siteLinksList = computed(() => {
   }
   return result;
 });
-
-// 网站链接图标
-const siteIcon = {
-  Blog,
-};
 
 // 链接跳转
 const jumpLink = (data) => {
