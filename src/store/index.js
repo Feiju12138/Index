@@ -2,7 +2,19 @@ import { defineStore } from "pinia";
 
 export const mainStore = defineStore("main", {
   state: () => {
+    let siteLinks;
+    $.ajax({
+      type: "GET",
+      url: "/siteLinks.json",
+      dataType: "json",
+      async: false,
+      success: function (result) {
+        siteLinks = result;
+      }
+    });
+
     return {
+      siteLinks: siteLinks,
       imgLoadStatus: false, // 壁纸加载状态
       innerWidth: null, // 当前窗口宽度
       coverType: "0", // 壁纸种类

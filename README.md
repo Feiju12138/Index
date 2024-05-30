@@ -4,6 +4,7 @@
 ### 📔 修改日志
 
 - 去除了 [imsyy/home](https://github.com/imsyy/home) 项目的 Launch Pad 以外的所有其他功能
+- 获取数据从之前的直接从前端代码中获取改为了发请求获取json，目前请求的路径指向为当前项目的`/siteLinks.json`文件，在`npm run build`编译之后，可以通过修改`siteLinks.json`文件来实现数据的重新渲染
 
 ### 待修复的问题
 
