@@ -45,13 +45,13 @@ npm run build
 # 构建
 docker build -t launch-pad .
 # 运行
-docker run -d -p 80:80 -p /your/config/path/siteLinks.json:/usr/share/nginx/html/siteLinks.json launch-pad
+docker run -d -p 80:80 -v /your/config/path/siteLinks.json:/usr/share/nginx/html/siteLinks.json launch-pad
 ```
 
 #### 直接用我构建的容器一键部署
 
 ```shell
-docker run -d -p 80:80 -p /your/config/path/siteLinks.json:/usr/share/nginx/html/siteLinks.json feiju12138/launch-pad:2.0
+docker run -d -p 80:80 -v /your/config/path/siteLinks.json:/usr/share/nginx/html/siteLinks.json feiju12138/launch-pad:2.0
 ```
 
 ### 配置文件
