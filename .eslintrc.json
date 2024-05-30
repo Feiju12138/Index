@@ -31,5 +31,9 @@
     "nextTick": true,
     "ElMessage": true,
     "$openList": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "parser": "babel-eslint"
   }
 }
